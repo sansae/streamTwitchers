@@ -7,7 +7,13 @@ function startTime() {
   var s = today.getSeconds();
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById('txt').innerHTML = displayDate() + " -- " + (h - 12) + ":" + m + ":" + s + " PT";
+  var amPm = h >= 12 ? "PM" : "AM";
+  if (h === 0) {
+    h = 12;
+  } else if (h > 12) {
+    h = h % 12;
+  }
+  document.getElementById('txt').innerHTML = displayDate() + " -- " + h + ":" + m + ":" + s + " " + amPm + " PT";
   var t = setTimeout(startTime, 500);
 }
 
