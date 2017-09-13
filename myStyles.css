@@ -17,7 +17,7 @@
 
 #streamers div {
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid grey;
   background: grey;
 }
 
@@ -28,6 +28,15 @@
 #streamers .row div {
   background: white;
   text-align: center;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+#name, #status {
+  padding-top: 15px;
 }
 
 #txt {
