@@ -15,31 +15,32 @@
   font-weight: bold;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
 #streamers div {
-  padding: 5px;
-  border: 1px solid grey;
-  background: grey;
-}
-
-#streamers .row {
-  margin: 4px -10px;
-}
-
-#streamers .row div {
+  padding: 0px;
+  border: 3px solid black;
   background: white;
   text-align: center;
 }
 
-img {
-  height: 100%;
-  width: 100%;
+#streamers .row {
+  margin: -4px -15px;
 }
 
-#name, #status {
-  padding-top: 15px;
+#streamers .row div:nth-child(n + 2) {
+/*   padding: 20px; */
 }
 
-#txt {
+#streamers .row div:nth-last-child(1) {
+  font-style: italic;
+}
+
+#dateAndTime {
   color: lightgrey;
   display: block;
   text-align: center;
