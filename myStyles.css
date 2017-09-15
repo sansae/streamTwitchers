@@ -1,31 +1,23 @@
-#header h1 {
-  background: purple;
-}
-
 #buttons {
-/*   float: right; */
-  position: absolute;
-  right: 0;
-  background: orange;
-/*   width: 60px; */
+  float: right;
+  width: 60px;
 }
 
 #buttons div {
-/*   float: right; */
-/*   position: absolute; */
+  float: right;
   font-size: 12px;
   color: black;
-  background: brown;
+  background: lightgrey;
   width: 20px;
-  height: 20px;
+  height: 18px;
   margin-bottom: 10px;
-/*   margin-left: 40px; */
+  margin-left: 40px;
+  transition: width 1s;
 }
 
 #buttons div:hover {
   background: pink;
   width: 60px;
-  transition: width 1s;
 }
 
 .container {
@@ -38,9 +30,7 @@
   padding: 30px 0px;
   color: lightgrey;
   display: block;
-  position: relative;
   text-align: center;
-/*   background: red; */
 }
 
 #header h1 {
