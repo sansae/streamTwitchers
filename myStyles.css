@@ -3,15 +3,23 @@
 }
 
 #buttons {
-  float: right;
+/*   float: right; */
+  position: absolute;
+  right: 0;
   background: orange;
+/*   width: 60px; */
 }
 
 #buttons div {
+/*   float: right; */
+/*   position: absolute; */
+  font-size: 12px;
+  color: black;
   background: brown;
   width: 20px;
   height: 20px;
   margin-bottom: 10px;
+/*   margin-left: 40px; */
 }
 
 #buttons div:hover {
@@ -30,6 +38,7 @@
   padding: 30px 0px;
   color: lightgrey;
   display: block;
+  position: relative;
   text-align: center;
 /*   background: red; */
 }
