@@ -1,23 +1,43 @@
-#buttons {
+#buttonContainer {
   float: right;
-  width: 60px;
+  width: 0px;
 }
 
-#buttons div {
+#buttonContainer .button {
   float: right;
   font-size: 12px;
   color: black;
   background: lightgrey;
-  width: 20px;
+  width: 30px;
   height: 18px;
   margin-bottom: 10px;
   margin-left: 40px;
-  transition: width 1s;
+  transition: width 1.2s;
 }
 
-#buttons div:hover {
-  background: pink;
-  width: 60px;
+#buttonContainer .button:hover {
+  width: 80px;
+}
+
+#circle1 {
+  background: black;
+}
+
+#circle2 {
+  background: green;
+}
+
+#circle3 {
+  background: blue;
+}
+
+.button div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 2px;
+  margin-top: 4px;
 }
 
 .container {
