@@ -40,13 +40,24 @@ $("button").click(function(){
   });
 })
 
-function checkTime(i) {
-  if (i < 10) {
-    i = "0" + i;
+
+/**
+ * Prepends 0 to minutes and seconds if the number is less than 10
+ * @param  {Number} number
+ * @return {Number}
+ */
+function checkTime(number) {
+  if (number < 10) {
+    number = "0" + number;
   }
-  return i;
+  return number;
 }
 
+
+/**
+ * Determines current date
+ * @return {String}
+ */
 function displayDate() {
   var currentDate = new Date();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -59,7 +70,6 @@ function displayDate() {
 
   return dayOfWeek + ", " + month + " " + dayOfMonth + ", " + year;
 }
-
 
 function startTime() {
   var today = new Date();
