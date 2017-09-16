@@ -40,7 +40,6 @@ $("button").click(function(){
   });
 })
 
-
 /**
  * Prepends 0 to minutes and seconds if the number is less than 10
  * @param  {Number} number
@@ -52,7 +51,6 @@ function checkTime(number) {
   }
   return number;
 }
-
 
 /**
  * Determines current date
@@ -70,6 +68,7 @@ function displayDate() {
 
   return dayOfWeek + ", " + month + " " + dayOfMonth + ", " + year;
 }
+
 
 function startTime() {
   var today = new Date();
@@ -92,6 +91,8 @@ $("#online").click(function() {
   twitchStreamers.forEach(function(username, index) {
     if ($("#status" + index).text() === "Offline") {
        $("#streamer" + index).hide();
+    } else {
+      $("#streamer" + index).show();
     }
   })
 })
@@ -100,6 +101,8 @@ $("#offline").click(function() {
   twitchStreamers.forEach(function(username, index) {
     if ($("#status" + index).text() !== "Offline") {
        $("#streamer" + index).hide();
+    } else {
+      $("#streamer" + index).show();
     }
   })
 })
