@@ -1,3 +1,16 @@
+/*rough idea of how to show or hide streamers
+who are online or offline when user clicks on
+the buttons*/
+// var num = 0;
+// $("#button1").click(function() {
+//   num++;
+//   if (num % 2 === 1) {
+//     $("#row1").hide();
+//   } else {
+//     $("#row1").show();
+//   }
+// })
+
 $("button").click(function(){
   var twitchUsers = ["ESL_SC2", "freecodecamp", "RobotCaleb"];
   twitchUsers.forEach(function(username, index) {
@@ -49,7 +62,7 @@ function checkTime(i) {
 function displayDate() {
   var currentDate = new Date();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturda'];
 
   var dayOfWeek = days[currentDate.getDay()];
   var month = months[currentDate.getMonth()];
