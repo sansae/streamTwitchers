@@ -5,18 +5,16 @@
 
 #buttonContainer .button {
   float: right;
-  font-size: 12px;
   color: black;
   background: lightgrey;
-  width: 30px;
+  width: 18px;
   height: 18px;
   margin-bottom: 10px;
-  margin-left: 40px;
   transition: width 1.2s;
 }
 
 #buttonContainer .button:hover {
-  width: 80px;
+  width: 70px;
 }
 
 #circle1 {
@@ -36,8 +34,20 @@
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  margin-left: 2px;
+  margin-left: 4px;
   margin-top: 4px;
+}
+
+.button p {
+  font-size: 12px;
+  text-align: right;
+  opacity: 0;
+  padding-right: 10px;
+}
+
+.button p:hover {
+  opacity: 1;
+  transition-delay: 0.7s;
 }
 
 .container {
