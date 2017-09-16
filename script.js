@@ -1,19 +1,7 @@
-/*rough idea of how to show or hide streamers
-who are online or offline when user clicks on
-the buttons*/
-// var num = 0;
-// $("#button1").click(function() {
-//   num++;
-//   if (num % 2 === 1) {
-//     $("#row1").hide();
-//   } else {
-//     $("#row1").show();
-//   }
-// })
+var twitchStreamers = ["ESL_SC2", "freecodecamp", "OgamingSC2"];
 
 $("button").click(function(){
-  var twitchUsers = ["ESL_SC2", "freecodecamp", "RobotCaleb"];
-  twitchUsers.forEach(function(username, index) {
+  twitchStreamers.forEach(function(username, index) {
     $.ajax({
       url: 'https://wind-bow.glitch.me/twitch-api/channels/' + username,
       success: function(data) {
@@ -62,7 +50,7 @@ function checkTime(i) {
 function displayDate() {
   var currentDate = new Date();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturda'];
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   var dayOfWeek = days[currentDate.getDay()];
   var month = months[currentDate.getMonth()];
@@ -89,3 +77,25 @@ function startTime() {
   document.getElementById('dateAndTime').innerHTML = displayDate() + " -- " + hour + ":" + minute + ":" + second + " " + amPm + " PT";
   var t = setTimeout(startTime, 500);
 }
+
+$("#online").click(function() {
+  twitchStreamers.forEach(function(username, index) {
+    if ($("#status" + index).text() === "Offline") {
+       $("#streamer" + index).hide();
+    }
+  })
+})
+
+$("#offline").click(function() {
+  twitchStreamers.forEach(function(username, index) {
+    if ($("#status" + index).text() !== "Offline") {
+       $("#streamer" + index).hide();
+    }
+  })
+})
+
+$("#all").click(function() {
+  twitchStreamers.forEach(function(username, index) {
+    $("#streamer" + index).show();
+  })
+})
