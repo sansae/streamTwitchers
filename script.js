@@ -1,44 +1,42 @@
 var twitchStreamers = ["ESL_SC2", "freecodecamp", "OgamingSC2"];
 
-$("button").click(function(){
-  twitchStreamers.forEach(function(username, index) {
-    $.ajax({
-      url: 'https://wind-bow.glitch.me/twitch-api/channels/' + username,
-      success: function(data) {
-        var logo = data.logo;
-        var name = data.display_name;
-        var game = data.game;
-        var status = game + ": " + data.status;
-        var url = data.url;
-        var img = new Image();
-        img.src = logo;
+twitchStreamers.forEach(function(username, index) {
+  $.ajax({
+    url: 'https://wind-bow.glitch.me/twitch-api/channels/' + username,
+    success: function(data) {
+      var logo = data.logo;
+      var name = data.display_name;
+      var game = data.game;
+      var status = game + ": " + data.status;
+      var url = data.url;
+      var img = new Image();
+      img.src = logo;
 
-        var img = new Image();
-        img.src = logo;
-        $("#logo" + index).html(img);
-        $("#name" + index).html("<a target='_blank' href=" + url + ">" + name + "</a>");
+      var img = new Image();
+      img.src = logo;
+      $("#logo" + index).html(img);
+      $("#name" + index).html("<a target='_blank' href=" + url + ">" + name + "</a>");
 
-        $.ajax({
-          url: "https://wind-bow.glitch.me/twitch-api/streams/" + username,
-          success: function(data) {
-            if (data.stream === null) {
-              $("#status" + index).html("Offline");
-            } else {
-              $("#status" + index).html(status);
-            }
-          },
-          error: function(XMLHttpRequest, textStatus, errorThrown) {
-            alert("Status: " + textStatus);
-            alert("Error:" + errorThrown);
+      $.ajax({
+        url: "https://wind-bow.glitch.me/twitch-api/streams/" + username,
+        success: function(data) {
+          if (data.stream === null) {
+            $("#status" + index).html("Offline");
+          } else {
+            $("#status" + index).html(status);
           }
-        });
-      },
-      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          alert("Status: " + textStatus);
+          alert("Error:" + errorThrown);
+        }
+      });
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
       alert("Status: " + textStatus); alert("Error: " + errorThrown);
-      }
-    });
+    }
   });
-})
+});
 
 /**
  * Prepends 0 to minutes and seconds if the number is less than 10
