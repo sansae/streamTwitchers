@@ -13,8 +13,12 @@
   transition: width 1.2s;
 }
 
-#buttonContainer .button:hover {
-  width: 70px;
+#buttonContainer #all:hover {
+  width: 50px;
+}
+
+#buttonContainer #online:hover, #offline:hover {
+  width: 80px;
 }
 
 #circle1 {
