@@ -9,11 +9,10 @@ twitchStreamers.forEach(function(username, index) {
       var game = data.game;
       var status = game + ": " + data.status;
       var url = data.url;
-      var img = new Image();
-      img.src = logo;
 
       var img = new Image();
       img.src = logo;
+
       $("#logo" + index).html(img);
       $("#name" + index).html("<a target='_blank' href=" + url + ">" + name + "</a>");
 
